@@ -14,7 +14,7 @@ int convert2B2I(char*); //converte 2 byte little endian in intero
 
 int main()
 {
-	string nomeFileInput = "input.wav";
+	string nomeFileInput;
 	char* header; //vettore di char in cui sarà messo l'header (servirà per la scrittura) 
 	char* fmtChunk; //vettore per il subchunk del formato
 	char* dataChunk; //per il data
@@ -29,6 +29,8 @@ int main()
 
 	//---PRIMA PARTE: ESTRARRE INFO ESSENZIALE DAL FILE---//
 
+	cout << "File name: ";
+	cin >> nomeFileInput;
 	ifstream fileAudioInput;
 	fileAudioInput.open(nomeFileInput, ios::binary);
 
