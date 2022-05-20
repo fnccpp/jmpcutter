@@ -2,9 +2,7 @@
 Il file wav è composto da un header di 12 byte, un chunk fmt, e uno data
 Tra questi possono esserci altri chunk non essenziali
 Ogni chunk inizia con 4 byte di ID e altri 4 di dimensione
-Dopo aver salvato l'header, cerca fmt e data
 */
-//per file molto grandi richiede troppa memoria
 
 #include <iostream>
 #include <fstream>
@@ -104,9 +102,9 @@ int main()
 		fileAudioInput.close();
 
 		//---SECONDA PARTE: ELIMINARE IL SILENZIO (IN DATA) ---// 
-//l'obiettivo è eliminare gli zeri (o valori bassi) quando sono troppi consecutivamente
-//controllo solo il primo dei 4 byte dei campioni, tanto è difficilissimo che il primo sia come un silenzio tantissime volte
-//sono teoricamente 192kB per secondo (è indicato nel byteRate, byte 16-19 del fmt)
+		//eliminare gli zeri (o valori bassi) quando sono troppi consecutivamente
+		//controllo solo il primo dei 4 byte dei campioni
+		//sono teoricamente 192kB per secondo (è indicato nel byteRate, byte 16-19 del fmt)
 
 		int dataSize = convert4B2I(nextChunkSize);
 		int inizioBlocco = 0, consecutivi = 0, newDataDim = 0;
@@ -181,7 +179,6 @@ int main()
 		for (int i = 44; i < finalSize; i++) {
 			fileFinale[i] = newData[i - 44];
 		}
-
 
 		//QUARTA PARTE: STAMPA FILE//
 		ofstream fileAudioOuput;
