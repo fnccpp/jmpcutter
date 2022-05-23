@@ -1,7 +1,7 @@
 # jmpcutter ✂️
 Truncates silence from .wav files
 
-![](https://img.shields.io/github/last-commit/fnccpp/organik) ![](https://img.shields.io/badge/platforms-Windows-lightgrey) ![](https://img.shields.io/badge/license-MIT-brightgreen) ![](https://img.shields.io/tokei/lines/github/fnccpp/jmpcutter)
+![](https://img.shields.io/github/last-commit/fnccpp/organik) ![](https://img.shields.io/badge/platforms-Windows-lightgrey) ![](https://img.shields.io/badge/license-MIT-brightgreen) 
 ## Description
 
 The application asks the user to input the name of the audio file to input, which must be in .wav format. It then cuts silences longer than 1 second, although the duration can be modified easily within the code.
